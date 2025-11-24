@@ -1,279 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Microsoft Office - Guía Completa 2025</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <style>
-    :root {
-      --office-blue: #0078D4;
-      --office-dark: #2b2b2b;
-    }
-    body { font-family: 'Segoe UI', sans-serif; background: #f8f9fa; }
-    .navbar { background: var(--office-blue) !important; }
-    .hero { 
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1497215728101-856f4ea42175?w=1920') center/cover no-repeat;
-      min-height: 90vh; color: white;
-    }
-    .card-app:hover { transform: translateY(-10px); transition: 0.3s; box-shadow: 0 10px 20px rgba(0,120,212,0.2); }
-    .timeline { position: relative; margin: 50px 0; }
-    .timeline::after { content: ''; position: absolute; width: 6px; background: var(--office-blue); top: 0; bottom: 0; left: 50%; margin-left: -3px; }
-    .timeline-item { padding: 10px 40px; position: relative; width: 50%; }
-    .timeline-item::after { content: ''; position: absolute; width: 25px; height: 25px; right: -17px; background: white; border: 4px solid var(--office-blue); top: 15px; border-radius: 50%; z-index: 1; }
-    .left { left: 0; }
-    .right { left: 50%; }
-    .right::after { left: -16px; }
-    .content { padding: 20px 30px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-    .quiz-btn { width: 100%; margin: 8px 0; }
-    .card-flip { perspective: 1000px; height: 120px; cursor: pointer; }
-    .card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s; transform-style: preserve-3d; }
-    .flipped .card-inner { transform: rotateY(180deg); }
-    .card-front, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; align-items: center; justify-content: center; border-radius: 10px; }
-    .card-front { background: var(--office-blue); color: white; font-size: 2rem; }
-    .card-back { background: #28a745; color: white; transform: rotateY(180deg); }
-    footer { background: var(--office-dark); color: white; padding: 40px 0; }
-  </style>
-</head>
-<body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Office - Todo en uno</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0078d4;
+            --dark: #1e1e1e;
+        }
+        body { font-family: 'Segoe UI', sans-serif; background: #f8f9fa; }
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1497215728101-856f4ea42175?w=1600') center/cover no-repeat;
+            min-height: 80vh; display: flex; align-items: center; color: white;
+        }
+        .navbar { box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .card:hover { transform: translateY(-8px); transition: 0.3s; }
+        footer { background: var(--dark); }
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#">Microsoft Office</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="nav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#historia">Historia</a></li>
-        <li class="nav-item"><a class="nav-link" href="#aplicaciones">Aplicaciones</a></li>
-        <li class="nav-item"><a class="nav-link" href="#tutoriales">Tutoriales</a></li>
-        <li class="nav-item"><a class="nav-link" href="#juegos">Juegos</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+/* Línea de tiempo */
+        .timeline {
+            position: relative; padding: 40px 0;
+        }
+        .timeline::before {
+            content: ''; position: absolute; top: 0; bottom: 0; left: 50%;
+            width: 4px; background: var(--primary); transform: translateX(-50%);
+        }
+        .timeline li {
+            margin: 50px 0; position: relative; width: 45%;
+            background: white; padding: 20px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .timeline li:nth-child(odd) { left: 0; }
+        .timeline li:nth-child(even) { left: 55%; }
+        .timeline li::before {
+            content: ''; position: absolute; width: 20px; height: 20px;
+            background: var(--primary); border-radius: 50%; top: 25px;
+        }
+        .timeline li:nth-child(odd)::before { right: -34px; }
+        .timeline li:nth-child(even)::before { left: -34px; }
 
-<!-- Hero -->
-<section id="inicio" class="hero d-flex align-items-center text-center">
-  <div class="container">
-    <h1 class="display-2 fw-bold">Microsoft Office</h1>
-    <p class="lead fs-3">La suite ofimática más poderosa del mundo desde 1989</p>
-    <a href="#aplicaciones" class="btn btn-light btn-lg mt-3">Explorar aplicaciones</a>
-  </div>
-</section>
-
-<!-- Historia -->
-<section id="historia" class="py-5 bg-white">
-  <div class="container">
-    <h2 class="text-center mb-5 display-5">Historia de Microsoft Office</h2>
-    <div class="timeline">
-      <div class="timeline-item left">
-        <div class="content"><h5>1989</h5><p>Primer Office para Mac (Word, Excel, PowerPoint)</p></div>
-      </div>
-      <div class="timeline-item right">
-        <div class="content"><h5>1990</h5><p>Lanzamiento para Windows</p></div>
-      </div>
-      <div class="timeline-item left">
-        <div class="content"><h5>2001</h5><p>Office XP introduce activación de producto</p></div>
-      </div>
-      <div class="timeline-item right">
-        <div class="content"><h5>2007</h5><p>Ribbon UI revolucionario</p></div>
-      </div>
-      <div class="timeline-item left">
-        <div class="content"><h5>2013</h5><p>Nace Office 365 (suscripción)</p></div>
-      </div>
-      <div class="timeline-item right">
-        <div class="content"><h5>2021</h5><p>Copilot: IA integrada en todas las apps</p></div>
-      </div>
-      <div class="timeline-item left">
-        <div class="content"><h5>2025</h5><p>Integración total con modelos locales y Grok</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Aplicaciones -->
-<section id="aplicaciones" class="py-5">
-  <div class="container">
-    <h2 class="text-center mb-5 display-5">Aplicaciones Principales</h2>
-    <div class="row g-4">
-      <div class="col-md-4"><div class="card card-app border-0 shadow h-100 text-center p-4">
-        <h3 class="text-primary">Word</h3>
-        <p>Procesador de textos profesional. Informes, cartas, tesis, libros.</p>
-      </div></div>
-      <div class="col-md-4"><div class="card card-app border-0 shadow h-100 text-center p-4">
-        <h3 class="text-success">Excel</h3>
-        <p>Análisis de datos, gráficos dinámicos, automatización con Power Query.</p>
-      </div></div>
-      <div class="col-md-4"><div class="card card-app border-0 shadow h-100 text-center p-4">
-        <h3 class="text-danger">PowerPoint</h3>
-        <p>Presentaciones impactantes con animaciones y diseño inteligente.</p>
-      </div></div>
-      <div class="col-md-4"><div class="card card-app border-0 shadow h-100 text-center p-4">
-        <h3 class="text-warning">Outlook</h3>
-        <p>Correo, calendario, tareas y contactos en una sola app.</p>
-      </div></div>
-      <div class="col-md-4"><div class="card card-app border-0 shadow h-100 text-center p-4">
-        <h3 class="text-info">OneNote</h3>
-        <p>Cuaderno digital infinito. Toma notas con texto, dibujos y audio.</p>
-      </div></div>
-      <div class="col-md-4"><div class="card card-app border-0 shadow h-100 text-center p-4">
-        <h3 class="text-secondary">Access</h3>
-        <p>Bases de datos de escritorio potentes para empresas pequeñas.</p>
-      </div></div>
-    </div>
-  </div>
-</section>
-
-<!-- Tutoriales -->
-<section id="tutoriales" class="py-5 bg-light">
-  <div class="container">
-    <h2 class="text-center mb-5 display-5">Tutoriales Básicos</h2>
-    <div class="row">
-      <div class="col-md-6 mb-4">
-        <div class="ratio ratio-16x9">
-          <iframe src="https://www.youtube.com/watch?v=-4ooZlyprmc" allowfullscreen></iframe>
-        </div>
-        <h5 class="mt-3">Word para principiantes</h5>
-      </div>
-      <div class="col-md-6 mb-4">
-        <div class="ratio ratio-16x9">
-          <iframe src="https://www.youtube.com/watch?v=yKWFMgurUnU&list=PLLniqWgyb4HHfkyWNgMWSvTq6RlUGusgN" allowfullscreen></iframe>
-        </div>
-        <h5 class="mt-3">Excel desde cero</h5>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Juegos Educativos -->
-<section id="juegos" class="py-5 bg-white">
-  <div class="container">
-    <h2 class="text-center mb-5 display-5">Juegos Educativos</h2>
-
-    <!-- Juego de Memoria -->
-    <div class="mb-5 p-4 border rounded shadow">
-      <h3>Juego de Memoria</h3>
-      <div class="row row-cols-4 g-3" id="memoria"></div>
-      <p class="mt-3">Parejas encontradas: <span id="parejas">0</span>/6</p>
-    </div>
-  </div>
-</section>
-
-<!-- Contacto -->
-<section id="contacto" class="py-5 bg-light">
-  <div class="container">
-    <h2 class="text-center mb-5 display-5">Contacto</h2>
-    <form class="col-md-8 mx-auto" action="https://formspree.io/f/xanywjwd" method="POST">
-      <div class="mb-3">
-        <input type="text" name="nombre" class="form-control form-control-lg" placeholder="Tu nombre" required>
-      </div>
-      <div class="mb-3">
-        <input type="email" name="email" class="form-control form-control-lg" placeholder="Tu email" required>
-      </div>
-      <div class="mb-3">
-        <textarea name="mensaje" rows="5" class="form-control form-control-lg" placeholder="Tu mensaje o duda sobre Office" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary btn-lg w-100">Enviar mensaje</button>
-    </form>
-  </div>
-</section>
-
-<footer class="text-center py-4">
-  <p>© 2025 Microsoft Office Info • Hecho con cariño para aprender y enseñar</p>
-  <div>
-    <a href="#" class="text-white mx-2"><i class="fab fa-facebook fa-2x"></i></a>
-    <a href="#" class="text-white mx-2"><i class="fab fa-twitter fa-2x"></i></a>
-    <a href="#" class="text-white mx-2"><i class="fab fa-linkedin fa-2x"></i></a>
-  </div>
-</footer>
-
-<script>
-// === QUIZ ===
-const preguntas = [
-  {p: "¿En qué año salió la primera versión de Office?", r: "1989", o: ["1989","1995","2000","2007"]},
-  {p: "¿Qué aplicación es para presentaciones?", r: "PowerPoint", o: ["Word","Excel","PowerPoint","Access"]},
-  {p: "¿Cuál es el atajo para guardar?", r: "Ctrl + S", o: ["Ctrl + G","Ctrl + S","Ctrl + P","Alt + F4"]},
-  {p: "¿Qué app sirve para correo?", r: "Outlook", o: ["OneNote","Outlook","Teams","Publisher"]},
-  {p: "¿En qué versión apareció el Ribbon?", r: "2007", o: ["2003","2007","2010","2013"]},
-  {p: "¿Cómo se llama el asistente IA de Office?", r: "Copilot", o: ["Clippy","Cortana","Copilot","Gemini"]},
-  {p: "¿Qué app es un cuaderno digital?", r: "OneNote", o: ["OneDrive","OneNote","Access","Publisher"]},
-  {p: "¿Qué reemplazó a Office 2019?", r: "Microsoft 365", o: ["Office 2021","Microsoft 365","Office Online","Office LTSC"]},
-  {p: "¿Qué formato usa Excel por defecto?", r: ".xlsx", o: [".xls",".csv",".xlsx",".xlsm"]},
-  {p: "¿Qué año nació Microsoft 365?", r: "2011", o: ["2007","2011","2015","2019"]}
-];
-
-let actual = 0, puntaje = 0;
-function cargarPregunta() {
-  if(actual >= preguntas.length) {
-    document.getElementById("quiz-container").innerHTML = `<h4>¡Fin del quiz! Puntaje final: ${puntaje}/${preguntas.length}</h4>`;
-    return;
-  }
-  document.getElementById("pregunta").textContent = preguntas[actual].p;
-  const ops = document.getElementById("opciones");
-  ops.innerHTML = "";
-  preguntas[actual].o.forEach(op => {
-    const btn = document.createElement("button");
-    btn.className = "btn btn-outline-primary quiz-btn";
-    btn.textContent = op;
-    btn.onclick = () => {
-      if(op === preguntas[actual].r) puntaje++;
-      document.getElementById("puntaje").textContent = puntaje;
-      actual++;
-      cargarPregunta();
-    };
-    ops.appendChild(btn);
-  });
-}
-cargarPregunta();
-
-// === JUEGO DE MEMORIA ===
-const iconos = ["Word","Excel","PowerPoint","Outlook","OneNote","Access"];
-let cartas = [...iconos, ...iconos].sort(() => Math.random() - 0.5);
-let seleccionadas = [];
-let parejas = 0;
-
-cartas.forEach((app, i) => {
-  const div = document.createElement("div");
-  div.className = "col";
-  div.innerHTML = `
-    <div class="card-flip" onclick="flip(${i})">
-      <div class="card-inner">
-        <div class="card-front">?</div>
-        <div class="card-back">${app}</div>
-      </div>
-    </div>`;
-  document.getElementById("memoria").appendChild(div);
-});
-
-function flip(i) {
-  const card = document.getElementsByClassName("card-flip")[i];
-  if(card.classList.contains("flipped") || seleccionadas.length === 2) return;
-  card.classList.add("flipped");
-  seleccionadas.push({i, valor: cartas[i], elem: card});
-
-  if(seleccionadas.length === 2) {
-    setTimeout(() => {
-      if(seleccionadas[0].valor === seleccionadas[1].valor) {
-        parejas++;
-        document.getElementById("parejas").textContent = parejas;
-        if(parejas === 6) alert("¡Ganaste el juego de memoria!");
-      } else {
-        seleccionadas.forEach(s => s.elem.classList.remove("flipped"));
-      }
-      seleccionadas = [];
-    }, 800);
-  }
-}
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
-<script src='https://cdn.jotfor.ms/agent/embedjs/019ab35e040d7a1492ee1467d12e58513391/embed.js'>
+/* Juegos */
+        .card-flip { perspective: 1000px; width: 100px; height: 100px; cursor: pointer; }
+        .card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s; transform-style: preserve-3d; }
+        .volteada .card-inner { transform: rotateY(180deg); }
+        .card-front, .card
+      <script src='https://cdn.jotfor.ms/agent/embedjs/019ab35e040d7a1492ee1467d12e58513391/embed.js'>
 </script>
